@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        
+        <script src="/angular.js"></script>
+        <script type="text/javascript" src="./Todo.js"></script>
+        <script type="text/javascript" src="./underscore-min.js"></script>
+        <link type="text/css" rel="stylesheet" href="./Todo.css">
+                        
+        <title>My ToDo List</title>
+        
+    </head>
+    <body>
+        <div class="box">
+            <div class="image-box">        
+                <img src="./todolist_icon1.png" alt="logo">
+            </div>
+            
+            <h1>My Todo List</h1>                   
+       
+        </div>
+
+        <div ng-controller="todoController">
+        <h2>Total todos: {{ getTotalTodos() }}</h2>
+            <ul>                    
+                <p ng-repeat="todo in todos">                                                    
+                        <input type="checkbox" ng-model="todo.done">                                
+                        <span class="done-{{todo.done}}">{{todo.Text}}</span>                        
+                </p>                    
+                <input type="text" ng-model="inputTodoText" required/>
+                <span style="cursor:pointer">
+                            <div class="my-button" ng-click="addTodo()">Add +</div>
+                            <div class="my-button" ng-click="clearTodo()">Clear -</div>
+                </span>
+            </ul>                            
+        </div>
+        
+            
+
+    </body>
+</html>
