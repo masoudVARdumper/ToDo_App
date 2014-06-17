@@ -15,7 +15,7 @@ function todoController($scope) {
     };
    
     $scope.addTodo = function () {  
-       if ($scope.inputTodoText == null) {
+       if ($scope.inputTodoText === undefined || $scope.inputTodoText ==="") {
            window.alert("don't have any task to do?!");
        } else {
                 $scope.todos.push({Text: $scope.inputTodoText, done: false}); 
